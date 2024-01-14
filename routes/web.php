@@ -2,6 +2,7 @@
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\adminController;
 
 /*
 |--------------------------------------------------------------------------
@@ -26,3 +27,6 @@ Route::post('/multi', function (Request $req) {
     $data['num'] = $req -> input('num');
     return view('result',$data);
 });
+
+
+Route::get('/admin', [adminController::class,'index']);
