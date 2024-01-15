@@ -3,6 +3,7 @@
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\adminController;
+use App\Http\Controllers\C_titles;
 
 /*
 |--------------------------------------------------------------------------
@@ -30,3 +31,5 @@ Route::post('/multi', function (Request $req) {
 
 
 Route::get('/admin', [adminController::class,'index']);
+
+Route::resource('titles', C_titles::class);
