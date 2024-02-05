@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Redirect;
+use Illuminate\Support\Facades\Auth;
 
 class MyAuth extends Controller
 {
@@ -25,7 +26,6 @@ class MyAuth extends Controller
         }else{
             return Redirect::to('login');
         }
-
     }
 
     function logout_process(){
@@ -39,15 +39,14 @@ class MyAuth extends Controller
 
     function register_process(Request $req){
         $req->validate([
-            'name' => 'required',
-            'email' => 'required|email|unique:users',
-            'passsword' => 'required|min:6|confirmed'
+        'name' => 'required',
+        'email' => 'required|email|unique:users',
+        'password' => 'required|min:6|confirmed',
         ]);
 
         $data = $req->all();
 
-        //dd($data);
-        User::created($data);
+        User::create($data);
 
         return Redirect::to('login');
     }

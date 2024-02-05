@@ -8,7 +8,7 @@
         <div class="container-fluid">
             <div class="row mb-2">
                 <div class="col-sm-6">
-                    <h1 class="m-0">SE CAMP</h1>
+                    <h1 class="m-0">SE CAMP : {{ session('key') }} : {{ Auth::user()->id }}</h1>
                 </div><!-- /.col -->
                 <div class="col-sm-6">
                     <ol class="breadcrumb float-sm-right">
@@ -93,6 +93,11 @@
                                         <td>
                                             <a href="{{ url('/titles/' . $title->tit_id) }}"
                                                 class="btn btn-warning">แก้ไข</a>
+                                            <form method="post" action="/titles/{{ $title->tit_id }}">
+                                                @csrf
+                                                @method('DELETE')
+                                                <button type="submit" class="btn btn-danger">ลบ</button>
+                                            </form>
                                         </td>
                                     </tr>
                                     <?php } ?>

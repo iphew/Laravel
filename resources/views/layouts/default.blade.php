@@ -181,7 +181,7 @@
                             alt="User Image">
                     </div>
                     <div class="info">
-                        <a href="#" class="d-block">Alexander Pierce</a>
+                        <a href="#" class="d-block">Sirikorn Saisod</a>
                     </div>
                 </div>
 
@@ -255,6 +255,9 @@
             <div class="p-3">
                 <h5>Title</h5>
                 <p>Sidebar content</p>
+                <a href="login" target="_blank">
+                    <button style="background-color: rgb(79, 78, 78); border-color:white; color:white">LOG OUT</button>
+                </a>
             </div>
         </aside>
         <!-- /.control-sidebar -->
