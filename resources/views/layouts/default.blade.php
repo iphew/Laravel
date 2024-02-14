@@ -11,6 +11,8 @@
         href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
     <!-- Font Awesome Icons -->
     <link rel="stylesheet" href="{{ url('assets/plugins/fontawesome-free/css/all.min.css') }}">
+    <!-- SweetAlert2 -->
+    <link rel="stylesheet" href="{{ url('assets/plugins/sweetalert2-theme-bootstrap-4/bootstrap-4.min.css') }}">
     <!-- Theme style -->
     <link rel="stylesheet" href="{{ url('assets/dist/css/adminlte.min.css') }}">
 </head>
@@ -181,7 +183,7 @@
                             alt="User Image">
                     </div>
                     <div class="info">
-                        <a href="#" class="d-block">Sirikorn Saisod</a>
+                        <a href="#" class="d-block">{{ Auth::user()->name }}</a>
                     </div>
                 </div>
 
@@ -255,9 +257,6 @@
             <div class="p-3">
                 <h5>Title</h5>
                 <p>Sidebar content</p>
-                <a href="login" target="_blank">
-                    <button style="background-color: rgb(79, 78, 78); border-color:white; color:white">LOG OUT</button>
-                </a>
             </div>
         </aside>
         <!-- /.control-sidebar -->
@@ -281,8 +280,11 @@
     <script src="{{ url('assets/plugins/jquery/jquery.min.js') }}"></script>
     <!-- Bootstrap 4 -->
     <script src="{{ url('assets/plugins/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
+    <!-- SweetAlert2 -->
+    <script src="{{ url('assets/plugins/sweetalert2/sweetalert2.min.js') }}"></script>
     <!-- AdminLTE App -->
     <script src="{{ url('assets/dist/js/adminlte.min.js') }}"></script>
+    @yield('js')
 </body>
 
 </html>

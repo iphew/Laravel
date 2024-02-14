@@ -28,6 +28,10 @@ Route::middleware('auth')->group(function() {
     // auth first
 });
 
+Route::get('/multiJVS', function () {
+    return view('multiJVS');
+});
+
 Route::get('/', function () {
     return view('welcome');
 });
